@@ -1,11 +1,67 @@
 [
   {
-    "name": "example",
-    "title": "TODO(author): the first document this industry must produce",
-    "for_each": "select gen_random_uuid() as id, 'Example' as name",
-    "file": "name",
+    "name": "declaration-record",
+    "title": "Declaration and assessment record",
+    "for_each": "select id,code from disclosures order by code",
+    "file": "code",
     "sections": [
-      { "title": "Details", "sql": "select 'replace me' as item, $1::text as record_id" }
+      {
+        "title": "Declared interest",
+        "layout": "record",
+        "sql": "select d.code,p.name as person,d.title,d.kind,d.entity,d.details,d.declared_on,d.revision from disclosures d join people p on p.id=d.person_id where d.id=$1"
+      },
+      {
+        "title": "Assessments and their evidence",
+        "sql": "select r.revision,p.name as reviewer,r.outcome,r.rationale,r.evidence,r.created_at from reviews r join people p on p.id=r.reviewer_id where disclosure_id=$1 order by sequence"
+      },
+      {
+        "title": "Record changes",
+        "sql": "select actor,action,note,created_at from activity where record_id=$1 order by sequence"
+      }
+    ]
+  },
+  {
+    "name": "management-plan",
+    "title": "Conflict management plan",
+    "for_each": "select d.id,d.code from disclosures d join v_latest_reviews r on r.disclosure_id=d.id where not d.archived and r.outcome='manage'",
+    "file": "code",
+    "sections": [
+      {
+        "title": "Declared interest",
+        "layout": "record",
+        "sql": "select d.code,p.name as person,d.title,d.kind,d.entity,d.details,d.declared_on,d.revision from disclosures d join people p on p.id=d.person_id where d.id=$1"
+      },
+      {
+        "title": "Latest recorded plan",
+        "note": "Compare reviewed revision to current revision. A stale plan needs fresh assessment.",
+        "layout": "record",
+        "sql": "select r.revision as reviewed_revision,d.revision as current_revision,r.plan,p.name as monitor,r.next_review_on,r.evidence from v_latest_reviews r join disclosures d on d.id=r.disclosure_id left join people p on p.id=r.monitor_id where d.id=$1"
+      },
+      {
+        "title": "Actions",
+        "sql": "select a.code,p.name as owner,a.title,a.due_on,a.status,a.evidence from actions a join people p on p.id=a.owner_id where disclosure_id=$1 order by a.due_on"
+      }
+    ]
+  },
+  {
+    "name": "round-summary",
+    "title": "Declaration round committee record",
+    "for_each": "select id,code from campaigns order by code",
+    "file": "code",
+    "sections": [
+      {
+        "title": "Round",
+        "layout": "record",
+        "sql": "select code,title,due_on from campaigns where id=$1"
+      },
+      {
+        "title": "Returns",
+        "sql": "select p.name,p.department,q.response,q.evidence,q.responded_at from requests q join people p on p.id=q.person_id where campaign_id=$1 order by p.name"
+      },
+      {
+        "title": "Linked disclosures",
+        "sql": "select d.code,d.title,v.position from disclosures d join requests q on q.id=d.request_id join v_register v on v.id=d.id where q.campaign_id=$1 order by d.code"
+      }
     ]
   }
 ]

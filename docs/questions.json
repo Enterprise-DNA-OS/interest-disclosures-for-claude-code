@@ -1,0 +1,42 @@
+[
+  {
+    "ask": "Which declaration rounds still have outstanding returns?",
+    "command": "disclosure-rounds"
+  },
+  {
+    "ask": "Who has not responded, grouped by their department?",
+    "command": "missing-returns"
+  },
+  {
+    "ask": "Which interests changed after their last assessment?",
+    "command": "changed-interests"
+  },
+  {
+    "ask": "Which independent reviews are waiting or escalated?",
+    "command": "review-queue"
+  },
+  {
+    "ask": "Which mitigation actions still need evidence of completion?",
+    "command": "mitigation-due"
+  },
+  {
+    "ask": "Which management plans need monitoring in the next month?",
+    "command": "monitoring-due"
+  },
+  {
+    "ask": "Which named organisation appears in more than one person’s disclosures?",
+    "command": "entity-overlap"
+  },
+  {
+    "ask": "Who holds the most overdue monitoring reviews?",
+    "command": "reviewer-load"
+  },
+  {
+    "ask": "Which personal records need a retention-purpose review?",
+    "command": "compliance"
+  },
+  {
+    "ask": "Who changed the register, and what did the record say before?",
+    "command": "activity and show --ref=COI-101"
+  }
+]

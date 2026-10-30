@@ -1,13 +1,36 @@
 [
   {
     "name": "week",
-    "title": "This week",
-    "subtitle": "Interest Disclosures for Claude Code: what needs attention, rendered by npm run view",
+    "title": "Disclosure desk: this week",
+    "subtitle": "Review snapshot. Dates and records must be checked before decisions.",
     "sections": [
       {
+        "title": "Declaration rounds",
+        "sql": "select * from v_rounds order by due_on"
+      },
+      {
         "title": "Needs attention",
-        "note": "TODO(author): point this at the industry's attention view (overdue, stuck, quiet).",
-        "sql": "select 'replace me' as item, 'TODO(author)' as why"
+        "sql": "select * from v_attention order by due_on nulls first,code"
+      }
+    ]
+  },
+  {
+    "name": "register",
+    "title": "Interests register",
+    "sections": [
+      {
+        "title": "Active disclosures",
+        "sql": "select code,person,department,title,entity,position,monitor,next_review_on from v_register order by code"
+      }
+    ]
+  },
+  {
+    "name": "mitigation",
+    "title": "Mitigation follow-up",
+    "sections": [
+      {
+        "title": "Open actions",
+        "sql": "select a.code,d.code as disclosure,p.name as owner,a.title,a.due_on from actions a join disclosures d on d.id=a.disclosure_id join people p on p.id=a.owner_id where a.status='open' order by due_on"
       }
     ]
   }

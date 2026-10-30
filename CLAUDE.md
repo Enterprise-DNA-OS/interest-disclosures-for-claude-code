@@ -1,43 +1,58 @@
-# Interest Disclosures for Claude Code: operating instructions
+# Interest Disclosures for Claude Code
 
-This file is the brain. Claude Code reads it at the start of every session. It says who this is for, how work gets done, and the one right way to do each recurring job.
+For the governance operator who records interests, runs declaration rounds and prepares committee reviews. Start with the business name, authorised operator and policy review dates. All demo people and organisations are fictional.
 
-## Who this is for
+## Work from evidence
 
-- **Business:** [YOUR BUSINESS]
-- **Operator:** [YOUR NAME], [your role]
-- **What matters most:** [the one or two outcomes you care about]
+Run npm run interests -- help. Read before changing records. Every mutation requires --actor. Declarations, nil returns, assessments, plans and completion evidence must come from a person. Never infer consent or an outcome. Independent review is enforced against the declared person’s identity. The actor field records attribution, not authentication. This is a trusted-operator tool, not an employee self-service portal.
 
-Fill this in once. A worker with context knows. A worker without it guesses.
+Never send, publish or delete. Drafts stay private under drafts/. Use archive with a supplied reason for closure after open actions are complete. Old reviews and original import columns remain available. A changed disclosure makes the prior review stale. A nil return cannot overwrite a linked declaration.
 
-## How to work
+## One workflow library
 
-1. **Take a brief, not a script.** The operator describes the outcome. You run the right command and present the answer.
-2. **Read before you write.** Before drafting anything about a record, read its full history first.
-3. **Plain language.** Short sentences. No filler. Numbers in tables.
-4. **Silent success, loud problems.** No play-by-play. Say what broke and what you did about it.
-5. **Stop at the line.** Anything that sends, deletes, or faces a customer waits for a yes in this session.
-
-## Routing table: one right way for each recurring job
-
-| When the operator asks for... | Use this |
+| Job | Recipe |
 |---|---|
-| <!-- TODO(author): one row per slash command --> | `/...` |
+| help | /help |
+| list | /list |
+| show | /show |
+| weekly-review | /weekly-review |
+| add | /add |
+| open-round | /open-round |
+| declare | /declare |
+| amend | /amend |
+| nil-return | /nil-return |
+| review | /review |
+| add-action | /add-action |
+| complete-action | /complete-action |
+| log | /log |
+| archive | /archive |
+| import | /import |
+| export | /export |
+| draft-reminders | /draft-reminders |
+| draft-committee | /draft-committee |
+| register | /register |
+| disclosure-rounds | /disclosure-rounds |
+| missing-returns | /missing-returns |
+| review-queue | /review-queue |
+| mitigation-due | /mitigation-due |
+| monitoring-due | /monitoring-due |
+| changed-interests | /changed-interests |
+| entity-overlap | /entity-overlap |
+| reviewer-load | /reviewer-load |
+| attention | /attention |
+| compliance | /compliance |
+| activity | /activity |
+| docs | /docs |
+| view | /view |
+| customise | /customise |
+| new-view | /new-view |
 
-If an ask fits nothing here, run the CLI directly (`npm run <cli> -- --help`) and then propose a new command for it.
+Monday’s weekly-review combines rounds, review queue, mitigation actions and attention. Assessments tied to an older revision need fresh human review. Return reports in chat with their evidence and gaps. No report certifies legal compliance.
 
-## Hard rules
+## Files and execution
 
-- Never send email or messages from here. Draft to `drafts/`, a person sends.
-- Never delete records without an explicit yes in this session. Prefer marking closed or archived.
-- Never invent a record. If a name is ambiguous, list the candidates and ask.
-- The database is the source of truth. If the answer is not in it, say so.
+One CLI: scripts/interests.mjs. One adapter: scripts/lib/db.mjs. Migrations live in supabase/migrations, commands in .claude/commands. brand.json controls the read-only reports and documents. DATABASE_URL selects PostgreSQL; otherwise local PGlite is used. Never seed a shared database. TEST_DATABASE_URL must be empty and disposable. RLS has no public access policies; shared use requires a configured trusted operator role. No employee access or identity integration is included. Administrators can change records; history is not tamper-proof or an electronic signature.
 
-## Where things live
+/customise writes and tests a new migration. /new-view adds a branded read-only report. Run npm test after changes. Sources and policy boundaries live in docs/compliance.md.
 
-- `scripts/` the CLI. `scripts/lib/db.mjs` picks `DATABASE_URL` (Postgres, Supabase) or the embedded database in `.data/`.
-- `supabase/migrations/` the schema, plain SQL. `npm run migrate` applies it.
-- `.claude/commands/` the slash commands. Add one every time the same ask comes twice.
-- `docs/` the thesis and the guide for moving off ConvergePoint Conflict of Interest.
-
-Built by Enterprise DNA. Installed and run for you as part of Omni: https://enterprisedna.co/omni/instead-of/convergepoint-coi
+Omni by Enterprise DNA installs, customises and runs this system. https://enterprisedna.co/omni/book/?offer=replace-software&utm_campaign=convergepoint-coi
