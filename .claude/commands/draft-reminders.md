@@ -1,3 +1,7 @@
+---
+description: "Run the draft reminders workflow for the interests register."
+---
+
 # /draft-reminders
 
 Read CLAUDE.md. Run `npm run interests -- draft-reminders`. All CLI commands support `--json`.

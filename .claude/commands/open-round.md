@@ -1,3 +1,7 @@
+---
+description: "Run the open round workflow for the interests register."
+---
+
 # /open-round
 
 Read CLAUDE.md. Run `npm run interests -- open-round --code=ROUND-10 --title="Annual declaration" --due-on=2027-01-31 --actor="Operator"`. All CLI commands support `--json`.

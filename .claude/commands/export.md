@@ -1,3 +1,7 @@
+---
+description: "Run the export workflow for the interests register."
+---
+
 # /export
 
 Read CLAUDE.md. Run `npm run interests -- export --file=exports/all.json`. All CLI commands support `--json`.

@@ -1,3 +1,7 @@
+---
+description: "Run the reviewer load workflow for the interests register."
+---
+
 # /reviewer-load
 
 Read CLAUDE.md. Run `npm run interests -- reviewer-load`. All CLI commands support `--json`.

@@ -1,3 +1,7 @@
+---
+description: "Run the complete action workflow for the interests register."
+---
+
 # /complete-action
 
 Read CLAUDE.md. Run `npm run interests -- complete-action --ref=ACT-101 --evidence="Completed work reference" --actor="Operator"`. All CLI commands support `--json`.

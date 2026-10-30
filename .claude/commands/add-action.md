@@ -1,3 +1,7 @@
+---
+description: "Run the add action workflow for the interests register."
+---
+
 # /add-action
 
 Read CLAUDE.md. Run `npm run interests -- add-action --ref=COI-101 --code=ACT-210 --owner=P05 --title="Agreed action" --due-on=2026-11-30 --actor="Operator"`. All CLI commands support `--json`.

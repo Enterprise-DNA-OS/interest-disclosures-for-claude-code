@@ -1,3 +1,7 @@
+---
+description: "Run the missing returns workflow for the interests register."
+---
+
 # /missing-returns
 
 Read CLAUDE.md. Run `npm run interests -- missing-returns`. All CLI commands support `--json`.

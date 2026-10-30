@@ -1,3 +1,7 @@
+---
+description: "Run the review queue workflow for the interests register."
+---
+
 # /review-queue
 
 Read CLAUDE.md. Run `npm run interests -- review-queue`. All CLI commands support `--json`.

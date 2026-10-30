@@ -1,3 +1,7 @@
+---
+description: "Run the archive workflow for the interests register."
+---
+
 # /archive
 
 Read CLAUDE.md. Run `npm run interests -- archive --ref=COI-101 --evidence="Human closure decision" --actor="Operator"`. All CLI commands support `--json`.

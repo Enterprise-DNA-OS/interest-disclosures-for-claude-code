@@ -1,3 +1,7 @@
+---
+description: "Run the help workflow for the interests register."
+---
+
 # /help
 
 Read CLAUDE.md. Run `npm run interests -- help`. All CLI commands support `--json`.

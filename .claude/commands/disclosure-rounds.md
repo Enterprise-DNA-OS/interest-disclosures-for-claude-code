@@ -1,3 +1,7 @@
+---
+description: "Run the disclosure rounds workflow for the interests register."
+---
+
 # /disclosure-rounds
 
 Read CLAUDE.md. Run `npm run interests -- disclosure-rounds`. All CLI commands support `--json`.

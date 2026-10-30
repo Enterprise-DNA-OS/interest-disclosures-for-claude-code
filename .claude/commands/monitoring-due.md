@@ -1,3 +1,7 @@
+---
+description: "Run the monitoring due workflow for the interests register."
+---
+
 # /monitoring-due
 
 Read CLAUDE.md. Run `npm run interests -- monitoring-due`. All CLI commands support `--json`.

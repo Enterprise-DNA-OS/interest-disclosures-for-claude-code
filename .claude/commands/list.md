@@ -1,3 +1,7 @@
+---
+description: "Run the list workflow for the interests register."
+---
+
 # /list
 
 Read CLAUDE.md. Run `npm run interests -- list --kind=disclosures`. All CLI commands support `--json`.

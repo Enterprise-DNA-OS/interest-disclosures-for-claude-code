@@ -1,3 +1,7 @@
+---
+description: "Run the draft committee workflow for the interests register."
+---
+
 # /draft-committee
 
 Read CLAUDE.md. Run `npm run interests -- draft-committee`. All CLI commands support `--json`.

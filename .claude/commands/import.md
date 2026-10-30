@@ -1,3 +1,7 @@
+---
+description: "Run the import workflow for the interests register."
+---
+
 # /import
 
 Read CLAUDE.md. Run `npm run interests -- import convergepoint --file=imports/report.csv --map=imports/field-map.json --dry-run --actor="Operator"`. All CLI commands support `--json`.

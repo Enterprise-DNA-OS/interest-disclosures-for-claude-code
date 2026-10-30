@@ -1,3 +1,7 @@
+---
+description: "Run the mitigation due workflow for the interests register."
+---
+
 # /mitigation-due
 
 Read CLAUDE.md. Run `npm run interests -- mitigation-due`. All CLI commands support `--json`.

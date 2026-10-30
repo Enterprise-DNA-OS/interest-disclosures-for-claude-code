@@ -1,3 +1,7 @@
+---
+description: "Run the attention workflow for the interests register."
+---
+
 # /attention
 
 Read CLAUDE.md. Run `npm run interests -- attention`. All CLI commands support `--json`.

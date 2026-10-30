@@ -1,3 +1,7 @@
+---
+description: "Run the entity overlap workflow for the interests register."
+---
+
 # /entity-overlap
 
 Read CLAUDE.md. Run `npm run interests -- entity-overlap`. All CLI commands support `--json`.

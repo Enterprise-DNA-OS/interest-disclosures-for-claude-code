@@ -1,3 +1,7 @@
+---
+description: "Run the weekly review workflow for the interests register."
+---
+
 # /weekly-review
 
 Read CLAUDE.md. Run `npm run interests -- weekly-review`. All CLI commands support `--json`.

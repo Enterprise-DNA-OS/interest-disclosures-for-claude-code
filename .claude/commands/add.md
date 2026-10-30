@@ -1,3 +1,7 @@
+---
+description: "Run the add workflow for the interests register."
+---
+
 # /add
 
 Read CLAUDE.md. Run `npm run interests -- add --code=P10 --name="Person name" --department="Department" --actor="Operator"`. All CLI commands support `--json`.

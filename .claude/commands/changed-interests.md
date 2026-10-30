@@ -1,3 +1,7 @@
+---
+description: "Run the changed interests workflow for the interests register."
+---
+
 # /changed-interests
 
 Read CLAUDE.md. Run `npm run interests -- changed-interests`. All CLI commands support `--json`.

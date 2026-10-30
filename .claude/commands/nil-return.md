@@ -1,3 +1,7 @@
+---
+description: "Run the nil return workflow for the interests register."
+---
+
 # /nil-return
 
 Read CLAUDE.md. Run `npm run interests -- nil-return --person=P02 --campaign=ROUND-01 --evidence="Signed declaration reference" --actor="Operator"`. All CLI commands support `--json`.

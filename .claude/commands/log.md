@@ -1,3 +1,7 @@
+---
+description: "Run the log workflow for the interests register."
+---
+
 # /log
 
 Read CLAUDE.md. Run `npm run interests -- log --ref=COI-101 --note="Supplied note" --actor="Operator"`. All CLI commands support `--json`.

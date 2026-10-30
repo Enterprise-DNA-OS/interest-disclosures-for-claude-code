@@ -1,3 +1,7 @@
+---
+description: "Run the amend workflow for the interests register."
+---
+
 # /amend
 
 Read CLAUDE.md. Run `npm run interests -- amend --ref=COI-101 --details="New supplied facts" --actor="Operator"`. All CLI commands support `--json`.

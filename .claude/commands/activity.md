@@ -1,3 +1,7 @@
+---
+description: "Run the activity workflow for the interests register."
+---
+
 # /activity
 
 Read CLAUDE.md. Run `npm run interests -- activity`. All CLI commands support `--json`.

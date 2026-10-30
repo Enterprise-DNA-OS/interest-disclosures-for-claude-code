@@ -1,3 +1,7 @@
+---
+description: "Run the review workflow for the interests register."
+---
+
 # /review
 
 Read CLAUDE.md. Run `npm run interests -- review --ref=COI-101 --reviewer=P03 --outcome=manage --rationale="Human assessment" --evidence="Meeting reference" --plan="Agreed management plan" --monitor=P05 --next-review-on=2027-01-31 --actor="Operator"`. All CLI commands support `--json`.

@@ -1,3 +1,7 @@
+---
+description: "Run the declare workflow for the interests register."
+---
+
 # /declare
 
 Read CLAUDE.md. Run `npm run interests -- declare --code=COI-210 --person=P01 --campaign=ROUND-01 --title="Declared interest" --kind=relationship --entity="Organisation" --details="Supplied declaration" --declared-on=2026-10-30 --review-due-on=2026-11-15 --retention-review-on=2027-10-30 --actor="Operator"`. All CLI commands support `--json`.
