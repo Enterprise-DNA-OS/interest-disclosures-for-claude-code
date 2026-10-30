@@ -23,7 +23,7 @@ export const reports={
 const entities=['people','campaigns','requests','disclosures','reviews','actions','activity'];
 const allowed={
  help:[],list:['kind'],show:['ref'], 'weekly-review':[],
- add:['kind','code','name','department','title','due-on'],
+ add:['kind','code','name','department'],
  'open-round':['code','title','due-on'],
  declare:['code','person','campaign','title','kind','entity','details','declared-on','review-due-on','retention-review-on'],
  amend:['ref','title','kind','entity','details','declared-on','review-due-on','retention-review-on'],
@@ -134,6 +134,7 @@ async function mutate(db,c,o,pos){
 
 export async function run(db,c,o={},pos=[]){
  if(!allowed[c])throw Error('Unknown command. Use help');
+ for(const k of ['json','dry-run','update'])if(o[k]!==undefined&&typeof o[k]!=='boolean')throw Error('Boolean flag --'+k+' takes no value');
  for(const k of Object.keys(o))if(!['json','actor',...allowed[c]].includes(k))throw Error('Unknown option --'+k);
  if(c!=='import'&&pos.length)throw Error('Unexpected positional argument');
  if(reports[c])return db.query(reports[c]);

@@ -52,6 +52,7 @@ try{
  await call('log',{ref:'COI-200',note:'<script>never execute</script>',...actor});
  const imp={file:path.join(REPO_ROOT,'fixtures/convergepoint-report.csv'),map:path.join(REPO_ROOT,'fixtures/field-map.json'),...actor};
  const count=async()=>Number((await db.query('select count(*) n from disclosures'))[0].n);
+ await fails('import',{...imp,update:'false'},/Boolean flag/,['convergepoint']);
  const before=await count();eq((await call('import',{...imp,'dry-run':true},['convergepoint']))[0].inserted,2);eq(await count(),before);
  eq((await call('import',imp,['convergepoint']))[0].inserted,2);eq((await call('import',imp,['convergepoint']))[0].unchanged,2);
  const imported=(await db.query("select * from disclosures where source_id='R-100'"))[0];eq(imported.source_data['Original Decision'],'Approved');eq((await db.query('select count(*)::int n from reviews where disclosure_id=$1',[imported.id]))[0].n,0);

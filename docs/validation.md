@@ -1,6 +1,6 @@
 # Validation, 30 October 2026
 
-Local Linux run: npm install, npm test and npm run demo passed. The test suite exercised 30 CLI commands and 78 checks using a temporary PGlite database. npm run view produced three reports. npm run docs produced six documents across three document types. The weekly report was opened and visually inspected in headless Chromium.
+Local Linux run: npm install, npm test and npm run demo passed. The test suite exercised 30 CLI commands and 79 checks using a temporary PGlite database. npm run view produced three reports. npm run docs produced six documents across three document types. The weekly report was opened and visually inspected in headless Chromium.
 
 There are 34 executable slash-command recipes, plus the commands directory README. Brand checks passed for README, CLAUDE and the research, compliance, migration and no-front-end guides. The source contains no author placeholders.
 
